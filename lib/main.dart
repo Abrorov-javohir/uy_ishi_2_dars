@@ -40,33 +40,25 @@
 
 // import 'package:flutter/material.dart';
 
+// void main() {
+//   runApp(ComputationScreen());
+// }
+
 // class ComputationScreen extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
+//     int result = heavyComputation();
 //     return Scaffold(
 //       appBar: AppBar(title: Text('Heavy Computation')),
 //       body: Center(
-//         child: FutureBuilder<int>(
-//           future: heavyComputation(),
-//           builder: (context, snapshot) {
-//             if (snapshot.connectionState == ConnectionState.waiting) {
-//               return CircularProgressIndicator();
-//             } else if (snapshot.hasError) {
-//               return Text('Error: ${snapshot.error}');
-//             } else if (snapshot.hasData) {
-//               return Text('Result: ${snapshot.data}');
-//             } else {
-//               return Text('No result');
-//             }
-//           },
-//         ),
+//         child: Text('Result: $result'),
 //       ),
 //     );
 //   }
 
-//   Future<int> heavyComputation() async {
+//   int heavyComputation() {
 //     int sum = 0;
-//     for (int i = 0; i < 1000000000; i++) {
+//     for (int i = 0; i < 10000000000; i++) {
 //       sum += i;
 //     }
 //     return sum;
@@ -75,46 +67,50 @@
 
 // 3-Mashq: Rasmni yuklash ancha vaqtni olayapdi. Foydalanuvchiga rasm yuklanguncha boshqa rasm ko’rsating.
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class ImageScreen extends StatefulWidget {
-  @override
-  State<ImageScreen> createState() => _ImageScreenState();
-}
+// void main(List<String> args) {
+//   runApp(ImageScreen());
+// }
 
-class _ImageScreenState extends State<ImageScreen> {
-  bool isloading = true;
-  @override
-  initState() {
-    super.initState();
-    loadingimage();
-  }
+// class ImageScreen extends StatefulWidget {
+//   @override
+//   State<ImageScreen> createState() => _ImageScreenState();
+// }
 
-  Future<void> loadingimage() async {
-    await Future.delayed(Duration(seconds: 2));
-    setState(() {
-      isloading = false;
-    });
-  }
+// class _ImageScreenState extends State<ImageScreen> {
+//   bool isloading = true;
+//   @override
+//   initState() {
+//     super.initState();
+//     loadingimage();
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text('Picture  Loading')),
-        body: isloading
-            ? Image.network(
-                'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg')
-            : girdviewitem());
-  }
-}
+//   Future<void> loadingimage() async {
+//     await Future.delayed(Duration(seconds: 2));
+//     setState(() {
+//       isloading = false;
+//     });
+//   }
 
-girdviewitem() {
-  return GridView.builder(
-    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-    itemCount: 100,
-    itemBuilder: (context, index) {
-      return Image.network(
-          'https://3.hdqwalls.com/wallpapers/skye-united-kingdom-8k-yh.jpg');
-    },
-  );
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         appBar: AppBar(title: Text('Picture  Loading')),
+//         body: isloading
+//             ? Image.network(
+//                 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg')
+//             : girdviewitem());
+//   }
+// }
+
+// girdviewitem() {
+//   return GridView.builder(
+//     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+//     itemCount: 100,
+//     itemBuilder: (context, index) {
+//       return Image.network(
+//           'https://3.hdqwalls.com/wallpapers/skye-united-kingdom-8k-yh.jpg');
+//     },
+//   );
+// }
